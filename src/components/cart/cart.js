@@ -58,7 +58,7 @@ let cart = {
     addProduct(product) {
         let find = this.items.find(item => item.id_product === product.id)
         if (!find) {
-            this.items.push(cart.createCartItem(product.id, product.name, product.price)) //потому-что дата-сет
+            this.items.push(cart.createCartItem(product.id, product.name, product.price)) //потому-что дата-сет из catalog
         } else {
             find.quantity++
         }

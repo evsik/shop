@@ -32,7 +32,6 @@ let catalog = {
             }
         }
     },
-    // cartInit: cart.init(),
     init() {
         this.items = []
         this.cart = cart
