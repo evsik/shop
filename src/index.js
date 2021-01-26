@@ -1,4 +1,7 @@
-import app from "./components/catalog/catalog"
+import app from "./components"
+import bootstrap from "bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
 
-app.init()
-app.cart.init()
+import "./layout/styles/css/style.css"
+
+app()
