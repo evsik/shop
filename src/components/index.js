@@ -1,7 +1,7 @@
 import cart from "./cart/cart";
-import catalog from "./catalog/catalog";
+import Catalog from "./catalog/catalog";
 
 export default () => {
     cart.init()
-    catalog.init()
+    let catalog = new Catalog('.products', cart, 'https://raw.githubusercontent.com/evsik/JavaScript/master/catalogData.json')
 }
