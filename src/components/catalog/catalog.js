@@ -1,4 +1,3 @@
-import cart from "../cart/cart";
 
 class Catalog {
     constructor(container, cart, catalogUrl) {
@@ -35,7 +34,6 @@ class Catalog {
             }
         }
     }
-
     init() {
         this.items = []
         this.getData(this.catalogUrl)
@@ -50,7 +48,6 @@ class Catalog {
             }
         })
     }
-
     getData(url) {
         return fetch(url)
             .then(data => data.json())
@@ -58,7 +55,6 @@ class Catalog {
                 this.items = data2
             })
     }
-
     _fetchItems() {
         let arr = []
 
@@ -68,7 +64,6 @@ class Catalog {
         console.log(arr)
         this.items = arr
     }
-
     _render() {
         let container = document.querySelector(this.container)
         let domString = ''
