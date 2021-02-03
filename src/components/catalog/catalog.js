@@ -76,6 +76,7 @@ class Catalog {
 }
 
 export default Catalog
+
 // let catalog = {
 //     items: [],
 //     container: '.products',

@@ -1,11 +1,11 @@
-import { BasketItem, CatalogItem } from '../items/items';
+import {BasketItem, CatalogItem} from '../items/items';
 
 let classes = {
     'Catalog': CatalogItem,
     'Basket': BasketItem
 }
 
-export default class List{
+export default class List {
     constructor(url, container, basket = false) {
         this.url = url;
         this.container = container;
@@ -18,6 +18,7 @@ export default class List{
         this._get(url)
             .then(data => {
                 this.items = basket ? data : data.content;
+                console.log(this.items)
             })
             .then(() => {
                 this._render();
@@ -26,7 +27,7 @@ export default class List{
 
     _get(url) {
         return fetch(url)
-            .then(data => data.json());
+            .then(data => data.json())
     }
 
     _render() {

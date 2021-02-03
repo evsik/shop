@@ -162,13 +162,12 @@ main {
 }
 
 .products {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
-  @include media-breakpoint-down(md) {
-    justify-content: space-around;
-  }
+  //@include media-breakpoint-down(md) {
+  //  justify-content: space-around;
+  //}
 }
 
 .b-desc {
@@ -180,6 +179,7 @@ main {
   margin-bottom: 15px;
 
   .b-item__img {
+    width: 100%;
   }
 
   .b-item__name {
