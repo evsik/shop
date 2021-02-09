@@ -18,29 +18,12 @@
                     E-SHOP
                 </h1>
             </div>
-            <div class="b-cart">
-                <form action="#" class="b-search">
-                    <input type="text" class="b-search__field" v-model="searchText">
-                    <button class="btn-search" type="submit" @click="filter">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <button class="btn-cart" id="toggle-cart" type="button" @click="catalogShown = !catalogShown">Корзина
+            <form action="#" class="b-search">
+                <input type="text" class="b-search__field" v-model="searchText">
+                <button class="btn-search" type="submit" @click="filter">
+                    <i class="fas fa-search"></i>
                 </button>
-                <div class="cart-block" v-if="catalogShown">
-                    <div class="d-flex flex-row justify-content-between">
-                        <b class="d-block">Общая стоимость:</b> <span class="d-block" id="tot-sum">  </span>
-                    </div>
-                    <hr>
-                    <div class="cart-block__items">
-
-                    </div>
-                    <hr>
-                    <div class="d-flex flex-row justify-content-between">
-                        <b class="d-block">Количество:</b> <span class="d-block" id="tot-qua">  </span>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </header>
     <main class="main" id="main">
