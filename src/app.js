@@ -64,7 +64,7 @@
             this.cartItems = data.content;
             console.log(this.cartItems)
         })
-    }
-})
+    },
 
- export default app
+})
+ // export default app
