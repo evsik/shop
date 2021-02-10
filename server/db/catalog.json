@@ -1,0 +1,26 @@
+[
+  {
+    "id_product": 123,
+    "product_name": "VARINA CLUB PEOPLE T-SHIRT",
+    "price": 60,
+    "img": "https://raw.githubusercontent.com/evsik/static/master/SHOP(IMGS)/Fetured1.jpg"
+  },
+  {
+    "id_product": 456,
+    "product_name": "RED MANGO T-SHIRT",
+    "price": 55,
+    "img": "https://raw.githubusercontent.com/evsik/static/master/SHOP(IMGS)/Fetured2.jpg"
+  },
+  {
+    "id_product": 71,
+    "product_name": "NAVY PUFFY JACKET",
+    "price": 150,
+    "img": "https://raw.githubusercontent.com/evsik/static/master/SHOP(IMGS)/Fetured3.jpg"
+  },
+  {
+    "id_product": 188,
+    "product_name": "FLOWERS WOMEN SHIRT",
+    "price": 100,
+    "img": "https://raw.githubusercontent.com/evsik/static/master/SHOP(IMGS)/Fetured4.jpg"
+  }
+]
