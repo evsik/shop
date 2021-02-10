@@ -13,6 +13,7 @@
             type="basket"
             :item="item"
             :key="item.id_product"
+            @remove="remove"
         />
       </div>
       <hr>
@@ -40,6 +41,24 @@ export default {
         .then(data => {
           this.items = data.content
         })
+  },
+  methods: {
+    add(item) {
+      let find = this.items.find(el => el.id_product == item.id_product)
+      if (!find) {
+        this.items.push(Object.assign(item, {quantity: 1}))
+      } else {
+        find.quantity++
+      }
+    },
+    remove(item) {
+      let find = this.items.find(el => el.id_product == item.id_product)
+      if (find.quantity > 1) {
+        find.quantity--
+      } else {
+        this.items.splice(this.items.indexOf(find), 1)
+      }
+    }
   }
 }
 </script>

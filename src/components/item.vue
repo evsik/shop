@@ -8,7 +8,7 @@
             <h3 class="b-item__name">{{ item.product_name }}</h3>
             <p class="b-item__price"> {{ item.price }} </p>
             <button class="buy-btn"
-                    @click="add(item)"
+                    @click="$parent.$emit('add', item)"
                     name="buy-btn">
               Купить
             </button>
@@ -29,7 +29,7 @@
           <div class="right-block">
             <p class="product-price">{{ item.price * item.quantity }}</p>
             <button name="del-btn"
-                    @click="remove(item)"
+                    @click="$emit('remove', item)"
                     class="b-item__delete_cart">
               &times;
             </button>
