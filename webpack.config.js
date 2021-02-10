@@ -35,6 +35,9 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                        }
                     }
                 ]
             }
@@ -45,14 +48,26 @@ module.exports = {
             filename: 'css/[name].css',
             chunkFilename: '[id].css'
         }),
-        // new CopyPlugin({
-        //     patterns: [
-        //         {from: "src/assets/imgs", to: "img"},
-        //     ],
-        // }),
+        new CopyPlugin({
+            patterns: [
+                {from: "src/assets/imgs", to: "img"},
+            ],
+        }),
         new HtmlWebpackPlugin({
             template: "./public/index.html"
         }),
         new VueLoaderPlugin()
-    ]
+    ],
+    devServer: {
+        port: 8080,
+        open: false,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                pathRewrite: { '^/api': '' },
+                secure: false,
+                changeOrigin: true
+            }
+        }
+    }
 }
