@@ -1,13 +1,5 @@
 {
-    "totalAmount": 2,
-    "totalPrice": 2000,
-    "content": [
-        {
-            "id_product": 123,
-            "product_name": "MANGO PEOPLE T-SHIRT",
-            "price": 1000,
-            "img": "https://raw.githubusercontent.com/evsik/static/master/SHOP(IMGS)/Fetured1.jpg",
-            "quantity": 2
-        }
-    ]
+ "totalAmount": 2,
+ "totalPrice": 2000,
+ "content": []
 }

@@ -26,12 +26,18 @@
 
 <script>
 import item from './item.vue';
+import {
+  get,
+  put,
+  del,
+  post
+} from '../utils/reqs.js';
 
 export default {
   components: {item},
   data() {
     return {
-      url: 'https://raw.githubusercontent.com/evsik/static/master/JSON%20files/basket.json',
+      url: '/api/basket',
       items: [],
       catalogShown: false
     }
@@ -46,19 +52,50 @@ export default {
     add(item) {
       let find = this.items.find(el => el.id_product == item.id_product)
       if (!find) {
-        this.items.push(Object.assign(item, {quantity: 1}))
+        let newItem = Object.assign({}, item, {
+          quantity: 1
+        });
+        post(this.url, newItem)
+            .then(res => {
+              if (res.status) {
+                this.items.push(newItem)
+              } else {
+                console.log('Server err')
+              }
+            })
       } else {
-        find.quantity++
+        put(`${this.url}/${item.id_product}`, 1)
+            .then(res => {
+              if (res.status) {
+                find.quantity++
+              } else {
+                console.log('Server err')
+              }
+            })
       }
     },
     remove(item) {
-      let find = this.items.find(el => el.id_product == item.id_product)
+      let find = this.items.find(el => el.id_product == item.id_product);
       if (find.quantity > 1) {
-        find.quantity--
+        put(`${this.url}/${item.id_product}`, -1)
+            .then(res => {
+              if (res.status) {
+                find.quantity--
+              } else {
+                console.log('Server err')
+              }
+            })
       } else {
-        this.items.splice(this.items.indexOf(find), 1)
+        del(`${this.url}/${item.id_product}`)
+            .then(res => {
+              if (res.status) {
+                this.items.splice(this.items.indexOf(find), 1);
+              } else {
+                console.log('Server err')
+              }
+            })
       }
-    }
+    },
   }
 }
 </script>

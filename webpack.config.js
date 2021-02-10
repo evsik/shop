@@ -48,11 +48,11 @@ module.exports = {
             filename: 'css/[name].css',
             chunkFilename: '[id].css'
         }),
-        new CopyPlugin({
-            patterns: [
-                {from: "src/assets/imgs", to: "img"},
-            ],
-        }),
+        // new CopyPlugin({
+        //     patterns: [
+        //         {from: "src/assets/imgs", to: "img"},
+        //     ],
+        // }),
         new HtmlWebpackPlugin({
             template: "./public/index.html"
         }),

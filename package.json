@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "api": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,10 @@
   },
   "dependencies": {
     "vue": "^2.6.12"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
   }
 }

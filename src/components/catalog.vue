@@ -18,7 +18,8 @@ export default {
   components: { item },
   data() {
     return {
-      url: 'https://raw.githubusercontent.com/evsik/static/master/JSON%20files/catalog.json',
+      // url: 'https://raw.githubusercontent.com/evsik/static/master/JSON%20files/catalog.json',
+      url: '/api/catalog',
       items: []
     }
   },
