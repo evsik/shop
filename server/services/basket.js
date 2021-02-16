@@ -7,9 +7,9 @@ module.exports = {
         basket.content.push(item);
         return basket;
     },
-    change(basket, id, amount) { //amount == 1/-1
+    change(basket, id, quantity) { //amount == 1/-1
         let find = _search(basket.content, id);
-        find.amount += amount;
+        find.quantity += quantity;
         return basket;
     },
     delete(basket, id) {

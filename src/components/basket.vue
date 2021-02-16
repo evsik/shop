@@ -43,10 +43,15 @@ export default {
     }
   },
   mounted() {
-    this.$parent.parentGet(this.url)
-        .then(data => {
-          this.items = data.content
-        })
+    get(this.url)
+        .then(basket => {
+          this.items = basket.content
+        });
+
+    // this.$parent.parentGet(this.url)
+    //     .then(data => {
+    //       this.items = data.content
+    //     })
   },
   methods: {
     add(item) {
